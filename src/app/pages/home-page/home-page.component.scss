@@ -1,0 +1,42 @@
+
+  ion-card span{
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+  }
+  
+  .foodContainer{
+  display: flex;
+  align-items: center;
+  }
+  .img-container{
+    max-width: 90px;
+    max-height: 110px;
+  }
+  
+  .excellent{
+    background-color: rgb(5, 117, 5);
+  }
+  .bon {
+    background-color: rgb(2, 183, 53);
+  }
+  .moyen {
+    background-color: rgba(224, 209, 37, 0.721);
+  }
+  .mediocre {
+    background-color: orange;
+  }
+  .mauvais {
+    background-color: red;
+  }
+  
+  .fa-clock-rotate-left{
+    margin-right: 4px;
+  }
+
+  ion-fab{
+    margin-top: 5px;
+  }
+

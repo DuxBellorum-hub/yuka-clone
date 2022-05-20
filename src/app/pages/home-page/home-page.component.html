@@ -1,0 +1,37 @@
+<ion-content overflow-scroll="true" direction="y" class="has-footer" *ngIf="!api_response_raw">
+
+  <ion-card class="foodContainer" *ngFor="let a of dbFood" (click)="goToDetail(a.addedDate, a.key)">
+    <div class="img-container">
+      <img [src]="a.imgUrl" alt="">
+    </div>
+    <div class="content-container">
+      <ion-card-header>
+        <ion-card-title>{{a.name}}</ion-card-title>
+        <ion-card-subtitle>{{a.brand}}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <p><span
+            [ngClass]="{'excellent': a.nutriscore == 'a', 'bon' : a.nutriscore == 'b', 'moyen': a.nutriscore == 'c', 'mediocre': a.nutriscore =='d', 'mauvais': a.nutriscore == 'e'}"></span>{{
+          a.nutritionName}}</p>
+        <p><i class="fa-solid fa-clock-rotate-left"></i>{{a.addedDate | dateAgo }}</p>
+      </ion-card-content>
+    </div>
+  </ion-card>
+
+  <ion-fab vertical="start" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="scanBarcode()" color="primary">
+      <ion-icon name="barcode"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
+
+
+<ion-content overflow-scroll="true" *ngIf="api_response_raw">
+
+  <app-article-detail idArticle="result.text" *ngIf="api_response_raw && api_response.product">
+  </app-article-detail>
+
+</ion-content>
+
+
